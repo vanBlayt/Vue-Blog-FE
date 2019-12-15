@@ -1,26 +1,17 @@
 <template>
   <div id="app">
-    <the-header></the-header>
-    <router-view />
+    <router-view></router-view>
   </div>
 </template>
 
+<style lang="less">
+</style>
+
 <script>
 /**
- * @file Blog入口
+ * @file App入口
  */
-import TheHeader from './common/TheHeader'
-
 export default {
-  name: 'App',
-  components: {
-    TheHeader
-  }
+  name: 'App'
 }
 </script>
-
-<style lang="less" scoped>
-#app {
-  margin: 16px;
-}
-</style>

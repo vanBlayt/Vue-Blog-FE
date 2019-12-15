@@ -3,9 +3,20 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { message, Menu, Button } from 'ant-design-vue'
+import {
+  message,
+  Layout,
+  Menu,
+  Icon,
+  Input,
+  Button
+} from 'ant-design-vue'
 
+// 性能优化 按需加载
+Vue.use(Layout)
 Vue.use(Menu)
+Vue.use(Icon)
+Vue.use(Input)
 Vue.use(Button)
 
 Vue.prototype.$message = message

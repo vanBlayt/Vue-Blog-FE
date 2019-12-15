@@ -1,5 +1,5 @@
 <template>
-  <div>Home</div>
+  <div>FrontEnd</div>
 </template>
 
 <style lang="less">
@@ -7,10 +7,10 @@
 
 <script>
 /**
- * @file 首页
+ * @file 前端
  */
 export default {
-  name: 'Home',
+  name: 'FrontEnd',
   data() {
     return {}
   }
