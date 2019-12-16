@@ -9,6 +9,7 @@ import {
   Menu,
   Icon,
   Input,
+  Checkbox,
   Button
 } from 'ant-design-vue'
 
@@ -17,6 +18,7 @@ Vue.use(Layout)
 Vue.use(Menu)
 Vue.use(Icon)
 Vue.use(Input)
+Vue.use(Checkbox)
 Vue.use(Button)
 
 Vue.prototype.$message = message

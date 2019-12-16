@@ -1,29 +1,25 @@
 <template>
-  <div class="login__wrapper">
-    <div class="login__box">
-      <div class="login__logo"></div>
-      <div class="login__input">
+  <div class="forget__wrapper">
+    <div class="forget__box">
+      <div class="forget__logo"></div>
+      <div class="forget__input">
         <a-input placeholder="用户名/邮箱" size="large" v-model="userName">
           <a-icon slot="prefix" theme="twoTone" type="idcard"></a-icon>
         </a-input>
         <a-input placeholder="密码" size="large" :type="inputType" v-model="password">
           <a-icon slot="prefix" theme="twoTone" type="safety-certificate"></a-icon>
+        </a-input>
+        <a-input placeholder="确认密码" size="large" :type="inputType" v-model="passwordConfirm">
+          <a-icon slot="prefix" theme="twoTone" type="safety-certificate"></a-icon>
           <a-icon slot="suffix" theme="twoTone" :type="visibleIcon" @click="handleVisibleChange"></a-icon>
         </a-input>
-      </div>
-      <div class="login__button">
-        <div class="login__remember">
-          <router-link class="login__forget" to="/forget">忘记密码</router-link>
-          <a-checkbox class="login__checkbox" v-model="isRemember">7天内自动登录</a-checkbox>
-        </div>
-        <a-button class="login__login-btn" type="primary">登录</a-button>
       </div>
     </div>
   </div>
 </template>
 
 <style lang="less">
-.login {
+.forget {
   &__wrapper {
     display: flex;
     width: 100vw;
@@ -48,44 +44,26 @@
   }
   &__input {
     display: flex;
-    height: 100px;
+    height: 150px;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-  }
-  &__button {
-    height: 100px;
-  }
-  &__remember {
-    height: 24px;
-    margin-top: 12px;
-  }
-  &__forget {
-    float: right;
-  }
-  &__checkbox {
-    float: left;
-  }
-  &__login-btn {
-    display: block;
-    width: 100%;
-    margin-top: 12px;
   }
 }
 </style>
 
 <script>
 /**
- * @file 登录/注册
+ * @file 忘记密码
  */
 export default {
-  name: 'Login',
+  name: 'Forget',
   data() {
     return {
       userName: '',
       password: '',
-      passwordVisible: false,
-      isRemember: false
+      passwordConfirm: '',
+      passwordVisible: false
     }
   },
   computed: {
