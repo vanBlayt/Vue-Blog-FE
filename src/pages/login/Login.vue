@@ -23,6 +23,8 @@
 </template>
 
 <style lang="less">
+@import '~assets/styles/mixin';
+
 .login {
   &__wrapper {
     display: flex;
@@ -40,8 +42,8 @@
     padding: 50px;
     text-align: center;
     background: #fff;
-    box-shadow: 0 1px 6px #dcdcdc;
     border-radius: 6px;
+    .shadow();
   }
   &__logo {
     height: 100px;

@@ -3,17 +3,17 @@
  */
 'use strict'
 let gulp = require('gulp')
-let sftp = require('gulp-sftp')
+let sftp = require('gulp-sftp-up4')
 let serverConfig = require('./sftp.config')
 
-gulp.task('deploy', () => {
-	gulp.src('dist/*').pipe(
-		sftp({
+// 部署到服务器
+gulp.task('deploy', function () {
+	return gulp.src(['dist/**/*','dist/*.html'])
+		.pipe(sftp({
 			host: serverConfig.host,
-			user: serverConfig.ssh.userName,
 			port: serverConfig.ssh.port,
+			user: serverConfig.ssh.userName,
 			pass: serverConfig.ssh.password,
 			remotePath: serverConfig.ssh.path
-		})
-	)
+		}))
 })

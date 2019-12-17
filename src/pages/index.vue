@@ -1,15 +1,20 @@
 <template>
   <div id="index">
     <the-header></the-header>
-    <router-view class="main"></router-view>
+    <the-content>
+      <router-view></router-view>
+    </the-content>
+    <the-footer></the-footer>
   </div>
 </template>
 
 <style lang="less">
-.main {
-  height: 90vh;
-  padding: 64px 50px 0;
-  background: #f6f6f6;
+#index {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background: #f0f2f5;
 }
 </style>
 
@@ -18,11 +23,15 @@
  * @file Blog入口
  */
 import TheHeader from '../common/TheHeader'
+import TheContent from '../common/TheContent'
+import TheFooter from '../common/TheFooter'
 
 export default {
   name: 'Index',
   components: {
-    TheHeader
+    TheHeader,
+    TheContent,
+    TheFooter
   }
 }
 </script>
