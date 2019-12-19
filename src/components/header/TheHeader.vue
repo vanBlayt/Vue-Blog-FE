@@ -63,7 +63,7 @@ export default {
     // 根据路由路径选中对应菜单
     selectedKeys: {
       get() {
-        let path = this.$route.path
+        const path = this.$route.path
         return [path]
       },
       set(path) {

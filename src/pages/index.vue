@@ -2,7 +2,9 @@
   <div id="index">
     <the-header></the-header>
     <the-content>
-      <router-view></router-view>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
     </the-content>
     <the-footer></the-footer>
   </div>
