@@ -1,5 +1,7 @@
 <template>
-  <div class="home__wrapper">Home</div>
+  <div class="home">
+    <div class="home__wrapper">Home</div>
+  </div>
 </template>
 
 <style lang="less">

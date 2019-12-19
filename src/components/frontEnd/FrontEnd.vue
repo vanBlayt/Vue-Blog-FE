@@ -1,52 +1,48 @@
 <template>
   <div class="front-end">
-    <the-header></the-header>
-    <the-content>
-      <div class="front-end__wrapper">
-        <div class="front-end__sider" ref="sider">
-          <a-menu class="front-end__menu" v-model="selectedKeys">
-            <a-menu-item v-for="item of menuItem" :key="item.key">
-              <a-icon :type="item.icon"></a-icon>
-              {{ item.text }}
-            </a-menu-item>
-          </a-menu>
-        </div>
-        <div class="front-end__center-content">
-          <blog-card
-            hoverable
-            v-for="item of blogList"
-            :title="item.title"
-            :content="item.content"
-            :key="item.id"
-          >
-            <div class="front-end__card-footer" slot="footer">
-              <div class="front-end__author">
-                <a-avatar class="front-end__author-head" size="small" icon="user"></a-avatar>
-                <div class="front-end__author-name">Jack_WJQ</div>
+    <div class="front-end__wrapper">
+      <div class="front-end__sider" ref="sider">
+        <a-menu class="front-end__menu" v-model="selectedKeys">
+          <a-menu-item v-for="item of menuItem" :key="item.key">
+            <a-icon :type="item.icon"></a-icon>
+            {{ item.text }}
+          </a-menu-item>
+        </a-menu>
+      </div>
+      <div class="front-end__center-content">
+        <blog-card
+          hoverable
+          v-for="item of blogList"
+          :title="item.title"
+          :content="item.content"
+          :key="item.id"
+        >
+          <div class="front-end__card-footer" slot="footer">
+            <div class="front-end__author">
+              <a-avatar class="front-end__author-head" size="small" icon="user"></a-avatar>
+              <div class="front-end__author-name">Jack_WJQ</div>
+            </div>
+            <div class="front-end__action">
+              <div class="front-end__favor">
+                <a-icon type="like"></a-icon>
+                <span>{{ item.favor }}</span>
               </div>
-              <div class="front-end__action">
-                <div class="front-end__favor">
-                  <a-icon type="like"></a-icon>
-                  <span>{{ item.favor }}</span>
-                </div>
-                <a-divider type="vertical"></a-divider>
-                <div class="front-end__view">
-                  <a-icon type="eye"></a-icon>
-                  <span>{{ item.view }}</span>
-                </div>
-                <a-divider type="vertical" v-if="item.message"></a-divider>
-                <div class="front-end__message" v-if="item.message">
-                  <a-icon type="message"></a-icon>
-                  <span>{{ item.message }}</span>
-                </div>
+              <a-divider type="vertical"></a-divider>
+              <div class="front-end__view">
+                <a-icon type="eye"></a-icon>
+                <span>{{ item.view }}</span>
+              </div>
+              <a-divider type="vertical" v-if="item.message"></a-divider>
+              <div class="front-end__message" v-if="item.message">
+                <a-icon type="message"></a-icon>
+                <span>{{ item.message }}</span>
               </div>
             </div>
-          </blog-card>
-          <blog-card :loading="loading" v-if="loading"></blog-card>
-        </div>
+          </div>
+        </blog-card>
+        <blog-card :loading="loading" v-if="loading"></blog-card>
       </div>
-    </the-content>
-    <the-footer></the-footer>
+    </div>
   </div>
 </template>
 
@@ -54,11 +50,6 @@
 @import '~assets/styles/mixin';
 
 .front-end {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-  background: #f0f2f5;
   &__wrapper {
     display: flex;
     position: relative;
@@ -117,8 +108,6 @@
 /**
  * @file 前端
  */
-import TheHeader from 'components/header/TheHeader'
-import TheContent from 'components/content/TheContent'
 import BlogCard from 'common/BlogCard'
 import axios from 'axios'
 import api from 'assets/js/api.config.js'
@@ -126,8 +115,6 @@ import api from 'assets/js/api.config.js'
 export default {
   name: 'FrontEnd',
   components: {
-    TheHeader,
-    TheContent,
     BlogCard
   },
   data() {

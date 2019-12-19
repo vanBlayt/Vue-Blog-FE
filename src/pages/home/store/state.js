@@ -1,4 +1,0 @@
-/**
- * @file HomeState
- */
-export default {}
