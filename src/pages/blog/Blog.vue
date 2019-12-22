@@ -1,15 +1,17 @@
 <template>
-  <div id="index">
+  <div class="page-frame">
     <the-header></the-header>
     <the-content>
-      <router-view></router-view>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
     </the-content>
     <the-footer></the-footer>
   </div>
 </template>
 
 <style lang="less">
-#index {
+.page-frame {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -20,14 +22,14 @@
 
 <script>
 /**
- * @file Blog入口
+ * @file 页面框架
  */
-import TheHeader from '../common/TheHeader'
-import TheContent from '../common/TheContent'
-import TheFooter from '../common/TheFooter'
+import TheHeader from 'components/header/TheHeader'
+import TheContent from 'components/content/TheContent'
+import TheFooter from 'components/footer/TheFooter'
 
 export default {
-  name: 'Index',
+  name: 'PageFrame',
   components: {
     TheHeader,
     TheContent,

@@ -1,18 +1,20 @@
 <template>
-  <div class="forget__wrapper">
-    <div class="forget__box">
-      <div class="forget__logo"></div>
-      <div class="forget__input">
-        <a-input placeholder="用户名/邮箱" size="large" v-model="userName">
-          <a-icon slot="prefix" theme="twoTone" type="idcard"></a-icon>
-        </a-input>
-        <a-input placeholder="密码" size="large" :type="inputType" v-model="password">
-          <a-icon slot="prefix" theme="twoTone" type="safety-certificate"></a-icon>
-        </a-input>
-        <a-input placeholder="确认密码" size="large" :type="inputType" v-model="passwordConfirm">
-          <a-icon slot="prefix" theme="twoTone" type="safety-certificate"></a-icon>
-          <a-icon slot="suffix" theme="twoTone" :type="visibleIcon" @click="handleVisibleChange"></a-icon>
-        </a-input>
+  <div class="forget">
+    <div class="forget__wrapper">
+      <div class="forget__box">
+        <div class="forget__logo"></div>
+        <div class="forget__input">
+          <a-input placeholder="用户名/邮箱" size="large" v-model="userName">
+            <a-icon slot="prefix" theme="twoTone" type="idcard"></a-icon>
+          </a-input>
+          <a-input placeholder="密码" size="large" :type="inputType" v-model="password">
+            <a-icon slot="prefix" theme="twoTone" type="safety-certificate"></a-icon>
+          </a-input>
+          <a-input placeholder="确认密码" size="large" :type="inputType" v-model="passwordConfirm">
+            <a-icon slot="prefix" theme="twoTone" type="safety-certificate"></a-icon>
+            <a-icon slot="suffix" theme="twoTone" :type="visibleIcon" @click="handleVisibleChange"></a-icon>
+          </a-input>
+        </div>
       </div>
     </div>
   </div>

@@ -25,6 +25,18 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 Please read the style guide before coding on [Vue Style Guide](https://vuejs.org/v2/style-guide/index.html).
 Teamwork should strictly followed by this guide.
 
+### Attention
+
+Please use these aliases instead of paths.
+
+```javascript
+'@': resolve('src')
+'assets': resolve('src/assets')
+'components': resolve('src/components')
+'common': resolve('src/components/common')
+'pages': resolve('src/pages')
+```
+
 ## Before Commit
 
 ```bash

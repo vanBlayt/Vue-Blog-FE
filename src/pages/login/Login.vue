@@ -1,22 +1,24 @@
 <template>
-  <div class="login__wrapper">
-    <div class="login__box">
-      <div class="login__logo"></div>
-      <div class="login__input">
-        <a-input placeholder="用户名/邮箱" size="large" v-model="userName">
-          <a-icon slot="prefix" theme="twoTone" type="idcard"></a-icon>
-        </a-input>
-        <a-input placeholder="密码" size="large" :type="inputType" v-model="password">
-          <a-icon slot="prefix" theme="twoTone" type="safety-certificate"></a-icon>
-          <a-icon slot="suffix" theme="twoTone" :type="visibleIcon" @click="handleVisibleChange"></a-icon>
-        </a-input>
-      </div>
-      <div class="login__button">
-        <div class="login__remember">
-          <router-link class="login__forget" to="/forget">忘记密码</router-link>
-          <a-checkbox class="login__checkbox" v-model="isRemember">7天内自动登录</a-checkbox>
+  <div class="login">
+    <div class="login__wrapper">
+      <div class="login__box">
+        <div class="login__logo"></div>
+        <div class="login__input">
+          <a-input placeholder="用户名/邮箱" size="large" v-model="userName">
+            <a-icon slot="prefix" theme="twoTone" type="idcard"></a-icon>
+          </a-input>
+          <a-input placeholder="密码" size="large" :type="inputType" v-model="password">
+            <a-icon slot="prefix" theme="twoTone" type="safety-certificate"></a-icon>
+            <a-icon slot="suffix" theme="twoTone" :type="visibleIcon" @click="handleVisibleChange"></a-icon>
+          </a-input>
         </div>
-        <a-button class="login__login-btn" type="primary">登录</a-button>
+        <div class="login__button">
+          <div class="login__remember">
+            <router-link class="login__forget" to="/forget">忘记密码</router-link>
+            <a-checkbox class="login__checkbox" v-model="isRemember">7天内自动登录</a-checkbox>
+          </div>
+          <a-button class="login__login-btn" type="primary">登录</a-button>
+        </div>
       </div>
     </div>
   </div>
